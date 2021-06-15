@@ -6,4 +6,8 @@
     <AssemblyName>FluentPOS.Modules.People.Infrastructure</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Modules.People.Infrastructure.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

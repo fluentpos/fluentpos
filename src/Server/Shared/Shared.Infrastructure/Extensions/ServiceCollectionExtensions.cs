@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Bootstrapper")]
@@ -71,12 +72,28 @@ namespace FluentPOS.Shared.Infrastructure.Extensions
         {
             return services.AddSwaggerGen(c =>
             {
-                c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\Bootstrapper.xml");
+                //c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\Bootstrapper.xml");
+
+                // include all project's xml comments
+                var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    if (!assembly.IsDynamic)
+                    {
+                        var xmlFile = $"{assembly.GetName().Name}.xml";
+                        var xmlPath = Path.Combine(baseDirectory, xmlFile);
+                        if (File.Exists(xmlPath))
+                        {
+                            c.IncludeXmlComments(xmlPath);
+                        }
+                    }
+                }
+
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "FluentPOS.API",
-                    License = new OpenApiLicense()
+                    License = new OpenApiLicense
                     {
                         Name = "MIT License",
                         Url = new Uri("https://opensource.org/licenses/MIT")

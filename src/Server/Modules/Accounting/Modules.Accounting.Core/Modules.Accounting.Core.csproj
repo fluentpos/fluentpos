@@ -6,4 +6,8 @@
     <AssemblyName>FluentPOS.Modules.Accounting.Core</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Modules.Accounting.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

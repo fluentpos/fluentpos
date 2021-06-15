@@ -6,4 +6,8 @@
     <AssemblyName>FluentPOS.Modules.Inventory</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Modules.Inventory.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

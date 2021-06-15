@@ -5,6 +5,10 @@
     <RootNamespace>FluentPOS.Shared.Infrastructure</RootNamespace>
     <AssemblyName>FluentPOS.Shared.Infrastructure</AssemblyName>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Shared.Infrastructure.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>

@@ -1,9 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FluentPOS.Modules.Inventory.Infrastructure</RootNamespace>
     <AssemblyName>FluentPOS.Modules.Inventory.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Modules.Inventory.Infrastructure.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
