@@ -6,8 +6,4 @@
     <AssemblyName>FluentPOS.Shared.DTOs</AssemblyName>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>FluentPOS.Shared.DTOs.xml</DocumentationFile>
-  </PropertyGroup>
-
 </Project>
