@@ -7,10 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A1C0C20-91E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{2A6EB1E6-5A7C-4732-99A2-0300916FA585}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{4E4F6E37-5A4F-4246-81FB-5CE5BF2B7B37}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{767EDE15-73FE-4F79-B437-117CD1B0DD1D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{DFB1D59D-0238-4D55-9FA0-24A11F844F34}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{408A6296-CD34-4016-91F2-C81782724068}"
@@ -21,25 +17,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sales", "Sales", "{1CADCB05
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory", "Inventory", "{47737E2E-19DD-438B-BC4F-3ABCED87FD8B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{D8B4C948-F626-4413-A47D-C2DB88C58850}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B59935A9-4288-4A52-B74E-BDFB36EA9225}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrapper", "src\Server\API\Bootstrapper.csproj", "{6F036BDD-0283-454B-8701-8198BDBA738B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrapper", "API\Bootstrapper.csproj", "{6F036BDD-0283-454B-8701-8198BDBA738B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{3527F964-727A-460F-9148-9A7D7799E433}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Infrastructure", "src\Server\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj", "{1884A9EB-DA76-450D-8646-2FB3F19F76A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Infrastructure", "Shared\Shared.Infrastructure\Shared.Infrastructure.csproj", "{1884A9EB-DA76-450D-8646-2FB3F19F76A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Application", "src\Server\Shared\Shared.Application\Shared.Application.csproj", "{0CDC02BA-FA0C-4081-9CB1-976009E527A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Application", "Shared\Shared.Application\Shared.Application.csproj", "{0CDC02BA-FA0C-4081-9CB1-976009E527A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog", "src\Server\Modules\Catalog\Modules.Catalog.Controllers\Modules.Catalog.csproj", "{F117E9E7-AE75-46E7-AF89-5E7FD80A4F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog", "Modules\Catalog\Modules.Catalog.Controllers\Modules.Catalog.csproj", "{F117E9E7-AE75-46E7-AF89-5E7FD80A4F9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{D1E949DF-445D-4218-B8BA-8FCA0DBFE1B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog.Core", "src\Server\Modules\Catalog\Modules.Catalog.Core\Modules.Catalog.Core.csproj", "{1BBC117B-89D7-483A-97F3-A031FC964C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog.Core", "Modules\Catalog\Modules.Catalog.Core\Modules.Catalog.Core.csproj", "{1BBC117B-89D7-483A-97F3-A031FC964C7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog.Infrastructure", "src\Server\Modules\Catalog\Modules.Catalog.Infrastructure\Modules.Catalog.Infrastructure.csproj", "{A2E419A5-9E34-45D8-8466-B59E5FA0A0F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Catalog.Infrastructure", "Modules\Catalog\Modules.Catalog.Infrastructure\Modules.Catalog.Infrastructure.csproj", "{A2E419A5-9E34-45D8-8466-B59E5FA0A0F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounting", "Accounting", "{BCDE59A2-E549-488C-9345-B8075D028098}"
 EndProject
@@ -49,37 +41,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		fluentpos.postman_collection.json = fluentpos.postman_collection.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity", "src\Server\Modules\Identity\Modules.Identity\Modules.Identity.csproj", "{0EFFDA25-9FC1-4169-BA08-A8A5B5497996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity", "Modules\Identity\Modules.Identity\Modules.Identity.csproj", "{0EFFDA25-9FC1-4169-BA08-A8A5B5497996}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity.Core", "src\Server\Modules\Identity\Modules.Identity.Core\Modules.Identity.Core.csproj", "{DB7F8800-975F-414A-8322-2720B64945B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity.Core", "Modules\Identity\Modules.Identity.Core\Modules.Identity.Core.csproj", "{DB7F8800-975F-414A-8322-2720B64945B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity.Infrastructure", "src\Server\Modules\Identity\Modules.Identity.Infrastructure\Modules.Identity.Infrastructure.csproj", "{EDCF1DCB-01ED-4042-8C9F-E267CD384FAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Identity.Infrastructure", "Modules\Identity\Modules.Identity.Infrastructure\Modules.Identity.Infrastructure.csproj", "{EDCF1DCB-01ED-4042-8C9F-E267CD384FAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory", "src\Server\Modules\Inventory\Modules.Inventory\Modules.Inventory.csproj", "{A12F1588-63A7-488D-A654-7713664B6AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory", "Modules\Inventory\Modules.Inventory\Modules.Inventory.csproj", "{A12F1588-63A7-488D-A654-7713664B6AAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory.Core", "src\Server\Modules\Inventory\Modules.Inventory.Core\Modules.Inventory.Core.csproj", "{B8C537A7-680D-4333-AE17-AF67B2E33E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory.Core", "Modules\Inventory\Modules.Inventory.Core\Modules.Inventory.Core.csproj", "{B8C537A7-680D-4333-AE17-AF67B2E33E1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory.Infrastructure", "src\Server\Modules\Inventory\Modules.Inventory.Infrastructure\Modules.Inventory.Infrastructure.csproj", "{9DD21FC1-934D-4419-ADA5-24B0A1817487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Inventory.Infrastructure", "Modules\Inventory\Modules.Inventory.Infrastructure\Modules.Inventory.Infrastructure.csproj", "{9DD21FC1-934D-4419-ADA5-24B0A1817487}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People", "src\Server\Modules\People\Modules.People\Modules.People.csproj", "{A9ACE119-B64A-41B0-8A2F-F5F6AFAB2007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People", "Modules\People\Modules.People\Modules.People.csproj", "{A9ACE119-B64A-41B0-8A2F-F5F6AFAB2007}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People.Core", "src\Server\Modules\People\Modules.People.Core\Modules.People.Core.csproj", "{C3FB367E-9CD8-4D98-BA71-CD6CBCB114F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People.Core", "Modules\People\Modules.People.Core\Modules.People.Core.csproj", "{C3FB367E-9CD8-4D98-BA71-CD6CBCB114F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People.Infrastructure", "src\Server\Modules\People\Modules.People.Infrastructure\Modules.People.Infrastructure.csproj", "{0F1C5782-2723-4D1E-B9EE-065F56453AF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.People.Infrastructure", "Modules\People\Modules.People.Infrastructure\Modules.People.Infrastructure.csproj", "{0F1C5782-2723-4D1E-B9EE-065F56453AF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales", "src\Server\Modules\Sales\Modules.Sales\Modules.Sales.csproj", "{B8A4A54A-880A-453C-B374-EDFE4D9EEB2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales", "Modules\Sales\Modules.Sales\Modules.Sales.csproj", "{B8A4A54A-880A-453C-B374-EDFE4D9EEB2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales.Core", "src\Server\Modules\Sales\Modules.Sales.Core\Modules.Sales.Core.csproj", "{A3C0007D-3F25-4F74-A9F0-46CE6043DB06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales.Core", "Modules\Sales\Modules.Sales.Core\Modules.Sales.Core.csproj", "{A3C0007D-3F25-4F74-A9F0-46CE6043DB06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales.Infrastructure", "src\Server\Modules\Sales\Modules.Sales.Infrastructure\Modules.Sales.Infrastructure.csproj", "{BB029E74-D559-494F-B742-A8EBD3F9821E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Sales.Infrastructure", "Modules\Sales\Modules.Sales.Infrastructure\Modules.Sales.Infrastructure.csproj", "{BB029E74-D559-494F-B742-A8EBD3F9821E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting", "src\Server\Modules\Accounting\Modules.Accounting\Modules.Accounting.csproj", "{6DA1C2C7-1674-4F25-951E-EC6159D6DB38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting", "Modules\Accounting\Modules.Accounting\Modules.Accounting.csproj", "{6DA1C2C7-1674-4F25-951E-EC6159D6DB38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting.Core", "src\Server\Modules\Accounting\Modules.Accounting.Core\Modules.Accounting.Core.csproj", "{B36795DB-3C7F-4FEE-B3E0-61CD3E7EE94D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting.Core", "Modules\Accounting\Modules.Accounting.Core\Modules.Accounting.Core.csproj", "{B36795DB-3C7F-4FEE-B3E0-61CD3E7EE94D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting.Infrastructure", "src\Server\Modules\Accounting\Modules.Accounting.Infrastructure\Modules.Accounting.Infrastructure.csproj", "{01D65DCA-C543-430D-9373-7E87384427CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Accounting.Infrastructure", "Modules\Accounting\Modules.Accounting.Infrastructure\Modules.Accounting.Infrastructure.csproj", "{01D65DCA-C543-430D-9373-7E87384427CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.DTOs", "src\Server\Shared\Shared.DTOs\Shared.DTOs.csproj", "{3F6178C5-8E99-4A80-87F8-5FB061DA3994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.DTOs", "Shared\Shared.DTOs\Shared.DTOs.csproj", "{3F6178C5-8E99-4A80-87F8-5FB061DA3994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,22 +172,18 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2A6EB1E6-5A7C-4732-99A2-0300916FA585} = {4E4F6E37-5A4F-4246-81FB-5CE5BF2B7B37}
-		{4E4F6E37-5A4F-4246-81FB-5CE5BF2B7B37} = {8A1C0C20-91EE-4348-A8EA-114D09DE05E0}
-		{767EDE15-73FE-4F79-B437-117CD1B0DD1D} = {8A1C0C20-91EE-4348-A8EA-114D09DE05E0}
+		{2A6EB1E6-5A7C-4732-99A2-0300916FA585} = {8A1C0C20-91EE-4348-A8EA-114D09DE05E0}
 		{DFB1D59D-0238-4D55-9FA0-24A11F844F34} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
 		{408A6296-CD34-4016-91F2-C81782724068} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
 		{883EBB46-7EA4-4E17-9AB0-7FE0F60C8565} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
 		{1CADCB05-2C7B-477C-9BCA-74766638C86E} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
 		{47737E2E-19DD-438B-BC4F-3ABCED87FD8B} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
-		{D8B4C948-F626-4413-A47D-C2DB88C58850} = {767EDE15-73FE-4F79-B437-117CD1B0DD1D}
-		{B59935A9-4288-4A52-B74E-BDFB36EA9225} = {767EDE15-73FE-4F79-B437-117CD1B0DD1D}
 		{6F036BDD-0283-454B-8701-8198BDBA738B} = {D1E949DF-445D-4218-B8BA-8FCA0DBFE1B6}
-		{3527F964-727A-460F-9148-9A7D7799E433} = {4E4F6E37-5A4F-4246-81FB-5CE5BF2B7B37}
+		{3527F964-727A-460F-9148-9A7D7799E433} = {8A1C0C20-91EE-4348-A8EA-114D09DE05E0}
 		{1884A9EB-DA76-450D-8646-2FB3F19F76A7} = {3527F964-727A-460F-9148-9A7D7799E433}
 		{0CDC02BA-FA0C-4081-9CB1-976009E527A3} = {3527F964-727A-460F-9148-9A7D7799E433}
 		{F117E9E7-AE75-46E7-AF89-5E7FD80A4F9A} = {408A6296-CD34-4016-91F2-C81782724068}
-		{D1E949DF-445D-4218-B8BA-8FCA0DBFE1B6} = {4E4F6E37-5A4F-4246-81FB-5CE5BF2B7B37}
+		{D1E949DF-445D-4218-B8BA-8FCA0DBFE1B6} = {8A1C0C20-91EE-4348-A8EA-114D09DE05E0}
 		{1BBC117B-89D7-483A-97F3-A031FC964C7A} = {408A6296-CD34-4016-91F2-C81782724068}
 		{A2E419A5-9E34-45D8-8466-B59E5FA0A0F9} = {408A6296-CD34-4016-91F2-C81782724068}
 		{BCDE59A2-E549-488C-9345-B8075D028098} = {2A6EB1E6-5A7C-4732-99A2-0300916FA585}
