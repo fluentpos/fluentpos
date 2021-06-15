@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace FluentPOS.Shared.Application.Domain
 {
+    /// <summary>
+    /// Base Class for all Entities
+    /// </summary>
     public abstract class BaseEntity
     {
         public Guid Id { get; set; }
