@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FluentPOS.Shared.DTOs</RootNamespace>
+    <AssemblyName>FluentPOS.Shared.DTOs</AssemblyName>
+  </PropertyGroup>
+
+</Project>

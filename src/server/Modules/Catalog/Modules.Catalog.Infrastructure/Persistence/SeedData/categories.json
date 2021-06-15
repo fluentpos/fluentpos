@@ -1,0 +1,56 @@
+[
+  {
+    "Id": "7eabe928-5e72-4743-a40a-cbb54aac9885",
+    "Name": "Baverage",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "0aa02895-39eb-43dd-aae9-7e95d89e1d05",
+    "Name": "Food",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "fddd50bd-a861-4a67-bf7a-cd3e83469eb1",
+    "Name": "Electronics",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "a9cc0757-de5a-4e02-9863-ca25693a6b1e",
+    "Name": "Smart Phone",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "f2d0ba82-1abb-4acf-b860-d0144dcc9b4d",
+    "Name": "Laptop",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "d0c9cb9e-ed7d-4bd0-aa47-c4a2c88ff151",
+    "Name": "Camera",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "6eef168c-d334-4ea1-95a3-1dbe472d6bac",
+    "Name": "Clothing",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "c553786e-b8c5-4ff8-823d-120b35210a29",
+    "Name": "Books",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "8117949a-d2de-483e-8659-1f8f02e0020a",
+    "Name": "Shoes",
+    "ImageUrl": "Images\\Catalog\\Categories\\default.png",
+    "Detail": "Sample Data"
+  }
+]

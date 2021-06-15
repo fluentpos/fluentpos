@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FluentPOS.Modules.Catalog.Infrastructure</RootNamespace>
+    <AssemblyName>FluentPOS.Modules.Catalog.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>FluentPOS.Modules.Catalog.Infrastructure.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="Persistence\SeedData\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules.Catalog.Core\Modules.Catalog.Core.csproj" />
+  </ItemGroup>
+
+</Project>

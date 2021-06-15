@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Id": "ca43337c-c9bc-4c18-98e1-3bf8694f9fb7",
+    "Name": "Apple",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "538f5ce7-9bd4-4309-8e62-6e566b01fdfe",
+    "Name": "Google",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "d72ee823-f4e6-43c4-84b5-0e27f8c290f2",
+    "Name": "Microsoft",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "5a1488ed-8e5c-40f9-ab48-6b73ecc1d6a0",
+    "Name": "Coca-Cola",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "6e84f5cc-5796-4957-8478-b9306656c5ed",
+    "Name": "Samsung",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "721317d0-481f-4e3b-b2ac-b6bb6c90941d",
+    "Name": "Louis Vuitton",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "309a4247-5df6-412d-90db-26117ea5e7f9",
+    "Name": "Intel",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "cdb4a5d4-e286-449c-9b46-f5dc57e0ea47",
+    "Name": "NIKE",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "74a83557-3705-4257-8728-0a3824507dde",
+    "Name": "Sony",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  },
+  {
+    "Id": "dd60f43e-aa94-4d61-b5d1-306e39e87c20",
+    "Name": "LG",
+    "ImageUrl": "Images\\Catalog\\Brands\\default.png",
+    "Detail": "Sample Data"
+  }
+]
