@@ -6,8 +6,4 @@
     <AssemblyName>FluentPOS.Modules.Sales</AssemblyName>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>FluentPOS.Modules.Sales.xml</DocumentationFile>
-  </PropertyGroup>
-
 </Project>

@@ -5,8 +5,4 @@
     <RootNamespace>FluentPOS.Modules.People</RootNamespace>
     <AssemblyName>FluentPOS.Modules.People</AssemblyName>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>FluentPOS.Modules.People.xml</DocumentationFile>
-  </PropertyGroup>
 </Project>
