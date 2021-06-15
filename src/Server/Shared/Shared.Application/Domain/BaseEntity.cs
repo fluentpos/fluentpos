@@ -8,6 +8,9 @@ namespace FluentPOS.Shared.Application.Domain
     /// </summary>
     public abstract class BaseEntity
     {
+        /// <summary>
+        /// Guid
+        /// </summary>
         public Guid Id { get; set; }
 
         protected BaseEntity()
