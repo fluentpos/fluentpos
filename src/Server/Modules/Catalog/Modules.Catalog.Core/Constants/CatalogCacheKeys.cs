@@ -11,7 +11,7 @@ namespace FluentPOS.Modules.Catalog.Core.Constants
         /// Generates Cache Keys for Brand Id
         /// </summary>
         /// <param name="id">Guid</param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public static string GetBrandByIdCacheKey(Guid id)
         {
             return $"Brand-{id}";
