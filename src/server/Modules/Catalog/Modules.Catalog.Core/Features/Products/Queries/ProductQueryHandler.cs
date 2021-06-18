@@ -78,7 +78,7 @@ namespace FluentPOS.Modules.Catalog.Core.Features.Products.Queries
 
         public async Task<Result<string>> Handle(GetProductImageQuery query, CancellationToken cancellationToken)
         {
-            var data = await _context.Brands.Where(p => p.Id == query.Id).Select(x => x.ImageUrl).FirstOrDefaultAsync(cancellationToken);
+            var data = await _context.Products.Where(p => p.Id == query.Id).Select(x => x.ImageUrl).FirstOrDefaultAsync(cancellationToken);
             return await Result<string>.SuccessAsync(data: data);
         }
     }
