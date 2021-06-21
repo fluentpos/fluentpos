@@ -4,12 +4,15 @@ using FluentPOS.Shared.DTOs.Catalogs.Categories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using FluentPOS.Shared.Core.Constants;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FluentPOS.Modules.Catalog.Controllers
 {
     internal class CategoriesController : BaseController
     {
         [HttpGet]
+        [Authorize(Policy = Permissions.Categories.ViewAll)]
         public async Task<IActionResult> GetAll([FromQuery] PaginatedCategoryFilter filter)
         {
             var categories = await Mediator.Send(new GetAllPagedCategoriesQuery(filter.PageNumber, filter.PageSize, filter.SearchString));
@@ -17,6 +20,7 @@ namespace FluentPOS.Modules.Catalog.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Policy = Permissions.Categories.View)]
         public async Task<IActionResult> GetById(Guid id, bool bypassCache)
         {
             var category = await Mediator.Send(new GetCategoryByIdQuery(id, bypassCache));
@@ -24,19 +28,22 @@ namespace FluentPOS.Modules.Catalog.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(RegisterCategoryCommand command)
+        [Authorize(Policy = Permissions.Categories.Register)]
+        public async Task<IActionResult> Register(RegisterCategoryCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
         [HttpPut]
+        [Authorize(Policy = Permissions.Categories.Update)]
         public async Task<IActionResult> Update(UpdateCategoryCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        [Authorize(Policy = Permissions.Categories.Remove)]
+        public async Task<IActionResult> Remove(Guid id)
         {
             return Ok(await Mediator.Send(new RemoveCategoryCommand(id)));
         }

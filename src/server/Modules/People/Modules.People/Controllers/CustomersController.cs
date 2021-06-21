@@ -33,12 +33,14 @@ namespace FluentPOS.Modules.People.Controllers
         {
             return Ok(await Mediator.Send(command));
         }
+
         [Authorize(Policy = Permissions.Customers.Update)]
         [HttpPut]
         public async Task<IActionResult> Update(UpdateCustomerCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
+
         [Authorize(Policy = Permissions.Customers.Remove)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(Guid id)

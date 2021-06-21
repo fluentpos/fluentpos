@@ -3,10 +3,6 @@ using FluentPOS.Shared.Core.Constants;
 using FluentPOS.Shared.DTOs.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FluentPOS.Modules.Identity.Controllers
@@ -19,6 +15,7 @@ namespace FluentPOS.Modules.Identity.Controllers
         {
             _roleService = roleService;
         }
+
         /// <summary>
         /// Get All Roles (basic, admin etc.)
         /// </summary>
@@ -30,6 +27,7 @@ namespace FluentPOS.Modules.Identity.Controllers
             var roles = await _roleService.GetAllAsync();
             return Ok(roles);
         }
+
         /// <summary>
         /// Add a Role
         /// </summary>
@@ -42,6 +40,7 @@ namespace FluentPOS.Modules.Identity.Controllers
             var response = await _roleService.SaveAsync(request);
             return Ok(response);
         }
+
         /// <summary>
         /// Delete a Role
         /// </summary>
@@ -54,6 +53,7 @@ namespace FluentPOS.Modules.Identity.Controllers
             var response = await _roleService.DeleteAsync(id);
             return Ok(response);
         }
+
         /// <summary>
         /// Get Permission By Role Id
         /// </summary>
@@ -66,6 +66,7 @@ namespace FluentPOS.Modules.Identity.Controllers
             var response = await _roleService.GetAllPermissionsAsync(roleId);
             return Ok(response);
         }
+
         /// <summary>
         /// Edit a Role Claim
         /// </summary>

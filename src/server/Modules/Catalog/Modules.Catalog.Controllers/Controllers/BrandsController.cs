@@ -11,10 +11,8 @@ namespace FluentPOS.Modules.Catalog.Controllers
 {
     internal class BrandsController : BaseController
     {
-        
-        
         [HttpGet("{id}")]
-        [Authorize(Policy = Permissions.Brands.Register)]
+        [Authorize(Policy = Permissions.Brands.View)]
         public async Task<IActionResult> GetById(Guid id, bool bypassCache)
         {
             var brand = await Mediator.Send(new GetBrandByIdQuery(id, bypassCache));
