@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Localization;
 
 namespace FluentPOS.Modules.People.Infrastructure.Persistence
 {
@@ -16,11 +16,13 @@ namespace FluentPOS.Modules.People.Infrastructure.Persistence
     {
         private readonly ILogger<PeopleDbSeeder> _logger;
         private readonly PeopleDbContext _db;
+        private readonly IStringLocalizer<PeopleDbContext> _localizer;
 
-        public PeopleDbSeeder(ILogger<PeopleDbSeeder> logger, PeopleDbContext db)
+        public PeopleDbSeeder(ILogger<PeopleDbSeeder> logger, PeopleDbContext db, IStringLocalizer<PeopleDbContext> localizer)
         {
             _logger = logger;
             _db = db;
+            _localizer = localizer;
         }
 
         public void Initialize()
@@ -30,9 +32,9 @@ namespace FluentPOS.Modules.People.Infrastructure.Persistence
                 AddCustomers();
                 _db.SaveChanges();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                _logger.LogError("An error occurred while seeding People data.");
+                _logger.LogError(_localizer["An error occurred while seeding People data."]);
             }
         }
 
@@ -50,12 +52,12 @@ namespace FluentPOS.Modules.People.Infrastructure.Persistence
                     {
                         foreach (var customer in customers)
                         {
-                            _db.Customers.Add(customer);
+                            await _db.Customers.AddAsync(customer);
                         }
                     }
 
                     await _db.SaveChangesAsync();
-                    _logger.LogInformation("Seeded Customers.");
+                    _logger.LogInformation(_localizer["Seeded Customers."]);
                 }
             }).GetAwaiter().GetResult();
         }

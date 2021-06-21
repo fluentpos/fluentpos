@@ -1,4 +1,5 @@
-﻿using FluentPOS.Modules.Catalog.Core.Entities;
+﻿using System;
+using FluentPOS.Modules.Catalog.Core.Entities;
 using FluentPOS.Shared.Core.Interfaces.Services;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Localization;
 
 namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
 {
@@ -14,11 +16,13 @@ namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
     {
         private readonly ILogger<CatalogDbSeeder> _logger;
         private readonly CatalogDbContext _db;
+        private readonly IStringLocalizer<CatalogDbSeeder> _localizer;
 
-        public CatalogDbSeeder(ILogger<CatalogDbSeeder> logger, CatalogDbContext db)
+        public CatalogDbSeeder(ILogger<CatalogDbSeeder> logger, CatalogDbContext db, IStringLocalizer<CatalogDbSeeder> localizer)
         {
             _logger = logger;
             _db = db;
+            _localizer = localizer;
         }
 
         public void Initialize()
@@ -30,9 +34,9 @@ namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
                 AddProducts();
                 _db.SaveChanges();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                _logger.LogError("An error occurred while seeding Catalog data.");
+                _logger.LogError(_localizer["An error occurred while seeding Catalog data."]);
             }
         }
 
@@ -50,12 +54,12 @@ namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
                     {
                         foreach (var brand in brands)
                         {
-                            _db.Brands.Add(brand);
+                            await _db.Brands.AddAsync(brand);
                         }
                     }
 
                     await _db.SaveChangesAsync();
-                    _logger.LogInformation("Seeded Brands.");
+                    _logger.LogInformation(_localizer["Seeded Brands."]);
                 }
             }).GetAwaiter().GetResult();
         }
@@ -74,12 +78,12 @@ namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
                     {
                         foreach (var category in categories)
                         {
-                            _db.Categories.Add(category);
+                            await _db.Categories.AddAsync(category);
                         }
                     }
 
                     await _db.SaveChangesAsync();
-                    _logger.LogInformation("Seeded Categories.");
+                    _logger.LogInformation(_localizer["Seeded Categories."]);
                 }
             }).GetAwaiter().GetResult();
         }
@@ -98,12 +102,12 @@ namespace FluentPOS.Modules.Catalog.Infrastructure.Persistence
                     {
                         foreach (var product in products)
                         {
-                            _db.Products.Add(product);
+                            await _db.Products.AddAsync(product);
                         }
                     }
 
                     await _db.SaveChangesAsync();
-                    _logger.LogInformation("Seeded Products.");
+                    _logger.LogInformation(_localizer["Seeded Products."]);
                 }
             }).GetAwaiter().GetResult();
         }
