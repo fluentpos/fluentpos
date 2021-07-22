@@ -2,6 +2,7 @@
 using FluentPOS.Shared.Core.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace FluentPOS.Modules.Identity.Controllers
@@ -25,7 +26,7 @@ namespace FluentPOS.Modules.Identity.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Policy = Permissions.Users.View)]
-        public async Task<IActionResult> GetByIdAsync(string id)
+        public async Task<IActionResult> GetByIdAsync(Guid id)
         {
             var user = await _userService.GetAsync(id);
             return Ok(user);
@@ -33,7 +34,7 @@ namespace FluentPOS.Modules.Identity.Controllers
 
         [HttpGet("roles/{id}")]
         [Authorize(Policy = Permissions.Users.View)]
-        public async Task<IActionResult> GetRolesAsync(string id)
+        public async Task<IActionResult> GetRolesAsync(Guid id)
         {
             var userRoles = await _userService.GetRolesAsync(id);
             return Ok(userRoles);

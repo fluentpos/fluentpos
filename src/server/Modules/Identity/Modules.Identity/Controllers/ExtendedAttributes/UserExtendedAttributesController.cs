@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 namespace FluentPOS.Modules.Identity.Controllers.ExtendedAttributes
 {
     [Route(BaseController.BasePath + "/user/attributes")]
-    internal sealed class UserExtendedAttributesController : ExtendedAttributesController<string, FluentUser>
+    internal sealed class UserExtendedAttributesController : ExtendedAttributesController<Guid, FluentUser>
     {
         private IMediator _mediatorInstance;
         protected override IMediator Mediator => _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
 
         [Authorize(Policy = Permissions.UsersExtendedAttributes.ViewAll)]
-        public override Task<IActionResult> GetAllAsync(PaginatedExtendedAttributeFilter<string> filter)
+        public override Task<IActionResult> GetAllAsync(PaginatedExtendedAttributeFilter<Guid> filter)
         {
             return base.GetAllAsync(filter);
         }
@@ -31,13 +31,13 @@ namespace FluentPOS.Modules.Identity.Controllers.ExtendedAttributes
         }
 
         [Authorize(Policy = Permissions.UsersExtendedAttributes.Add)]
-        public override Task<IActionResult> CreateAsync(AddExtendedAttributeCommand<string, FluentUser> command)
+        public override Task<IActionResult> CreateAsync(AddExtendedAttributeCommand<Guid, FluentUser> command)
         {
             return base.CreateAsync(command);
         }
 
         [Authorize(Policy = Permissions.UsersExtendedAttributes.Update)]
-        public override Task<IActionResult> UpdateAsync(UpdateExtendedAttributeCommand<string, FluentUser> command)
+        public override Task<IActionResult> UpdateAsync(UpdateExtendedAttributeCommand<Guid, FluentUser> command)
         {
             return base.UpdateAsync(command);
         }

@@ -14,5 +14,9 @@
     <ProjectReference Include="..\..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules.Identity.Core\Modules.Identity.Core.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Persistence\Migrations\" />
+  </ItemGroup>
 
 </Project>

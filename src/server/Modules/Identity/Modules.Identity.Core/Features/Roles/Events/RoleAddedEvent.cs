@@ -6,7 +6,7 @@ namespace FluentPOS.Modules.Identity.Core.Features.Roles.Events
 {
     public class RoleAddedEvent : Event
     {
-        public string Id { get; }
+        public Guid Id { get; }
         public string Name { get; }
         public string Description { get; }
 
@@ -15,9 +15,9 @@ namespace FluentPOS.Modules.Identity.Core.Features.Roles.Events
             Name = role.Name;
             Description = role.Description;
             Id = role.Id;
-            AggregateId = Guid.TryParse(role.Id, out var aggregateId)
-                ? aggregateId
-                : Guid.NewGuid();
+            AggregateId = role.Id == Guid.Empty
+                ? Guid.NewGuid()
+                : role.Id;
         }
     }
 }

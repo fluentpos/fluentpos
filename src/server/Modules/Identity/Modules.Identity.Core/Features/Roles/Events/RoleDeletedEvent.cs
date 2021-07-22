@@ -5,14 +5,14 @@ namespace FluentPOS.Modules.Identity.Core.Features.Roles.Events
 {
     public class RoleDeletedEvent : Event
     {
-        public string Id { get; }
+        public Guid Id { get; }
 
-        public RoleDeletedEvent(string id)
+        public RoleDeletedEvent(Guid id)
         {
             Id = id;
-            AggregateId = Guid.TryParse(id, out var aggregateId)
-                ? aggregateId
-                : Guid.NewGuid();
+            AggregateId = id == Guid.Empty
+                ? Guid.NewGuid()
+                : id;
         }
     }
 }

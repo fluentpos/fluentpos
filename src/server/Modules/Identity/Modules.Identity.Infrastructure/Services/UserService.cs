@@ -6,6 +6,7 @@ using FluentPOS.Shared.DTOs.Identity.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,17 +39,17 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             return await Result<List<UserResponse>>.SuccessAsync(result);
         }
 
-        public async Task<IResult<UserResponse>> GetAsync(string userId)
+        public async Task<IResult<UserResponse>> GetAsync(Guid userId)
         {
             var user = await _userManager.Users.AsNoTracking().Where(u => u.Id == userId).FirstOrDefaultAsync();
             var result = _mapper.Map<UserResponse>(user);
             return await Result<UserResponse>.SuccessAsync(result);
         }
 
-        public async Task<IResult<UserRolesResponse>> GetRolesAsync(string userId)
+        public async Task<IResult<UserRolesResponse>> GetRolesAsync(Guid userId)
         {
             var viewModel = new List<UserRoleModel>();
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userId.ToString());
             var roles = await _roleManager.Roles.AsNoTracking().ToListAsync();
             foreach (var role in roles)
             {

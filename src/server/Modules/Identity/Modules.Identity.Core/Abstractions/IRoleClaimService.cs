@@ -1,5 +1,6 @@
 ﻿using FluentPOS.Shared.Core.Wrapper;
 using FluentPOS.Shared.DTOs.Identity.Roles;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,15 +12,15 @@ namespace FluentPOS.Modules.Identity.Core.Abstractions
 
         Task<int> GetCountAsync();
 
-        Task<Result<RoleClaimResponse>> GetByIdAsync(int id);
+        Task<Result<RoleClaimResponse>> GetByIdAsync(Guid id);
 
-        Task<Result<List<RoleClaimResponse>>> GetAllByRoleIdAsync(string roleId);
+        Task<Result<List<RoleClaimResponse>>> GetAllByRoleIdAsync(Guid roleId);
 
         Task<Result<string>> SaveAsync(RoleClaimRequest request);
 
-        Task<Result<string>> DeleteAsync(int id);
+        Task<Result<string>> DeleteAsync(Guid id);
 
-        Task<Result<PermissionResponse>> GetAllPermissionsAsync(string roleId);
+        Task<Result<PermissionResponse>> GetAllPermissionsAsync(Guid roleId);
 
         Task<Result<string>> UpdatePermissionsAsync(PermissionRequest request);
     }

@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Modules.Catalog.Core\Modules.Catalog.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\Migrations\" />
+  </ItemGroup>
+
 </Project>

@@ -3,6 +3,7 @@ using FluentPOS.Shared.Core.Constants;
 using FluentPOS.Shared.DTOs.Identity.Roles;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace FluentPOS.Modules.Identity.Controllers
@@ -50,7 +51,7 @@ namespace FluentPOS.Modules.Identity.Controllers
         /// <returns>Status 200 OK</returns>
         [HttpDelete("{id}")]
         [Authorize(Policy = Permissions.Roles.Delete)]
-        public async Task<IActionResult> DeleteAsync(string id)
+        public async Task<IActionResult> DeleteAsync(Guid id)
         {
             var response = await _roleService.DeleteAsync(id);
             return Ok(response);
@@ -63,7 +64,7 @@ namespace FluentPOS.Modules.Identity.Controllers
         /// <returns>Status 200 Ok</returns>
         [HttpGet("permissions/byrole/{roleId}")]
         [Authorize(Policy = Permissions.RoleClaims.View)]
-        public async Task<IActionResult> GetPermissionsByRoleIdAsync([FromRoute] string roleId)
+        public async Task<IActionResult> GetPermissionsByRoleIdAsync([FromRoute] Guid roleId)
         {
             var response = await _roleClaimService.GetAllPermissionsAsync(roleId);
             return Ok(response);
@@ -88,7 +89,7 @@ namespace FluentPOS.Modules.Identity.Controllers
         /// <returns>Status 200 Ok</returns>
         [HttpGet("permissions/{id}")]
         [Authorize(Policy = Permissions.RoleClaims.View)]
-        public async Task<IActionResult> GetClaimByIdAsync([FromRoute] int id)
+        public async Task<IActionResult> GetClaimByIdAsync([FromRoute] Guid id)
         {
             var response = await _roleClaimService.GetByIdAsync(id);
             return Ok(response);
@@ -114,7 +115,7 @@ namespace FluentPOS.Modules.Identity.Controllers
         /// <returns>Status 200 Ok</returns>
         [HttpDelete("permissions/{id}")]
         [Authorize(Policy = Permissions.RoleClaims.Delete)]
-        public async Task<IActionResult> DeleteClaimByIdAsync([FromRoute] int id)
+        public async Task<IActionResult> DeleteClaimByIdAsync([FromRoute] Guid id)
         {
             var response = await _roleClaimService.DeleteAsync(id);
             return Ok(response);

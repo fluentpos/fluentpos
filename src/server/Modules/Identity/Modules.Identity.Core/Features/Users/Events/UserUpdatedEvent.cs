@@ -6,7 +6,7 @@ namespace FluentPOS.Modules.Identity.Core.Features.Users.Events
 {
     public class UserUpdatedEvent : Event
     {
-        public string Id { get; }
+        public Guid Id { get; }
         public string FirstName { get; }
         public string LastName { get; }
         public string Email { get; }
@@ -21,9 +21,9 @@ namespace FluentPOS.Modules.Identity.Core.Features.Users.Events
             UserName = user.UserName;
             PhoneNumber = user.PhoneNumber;
             Id = user.Id;
-            AggregateId = Guid.TryParse(user.Id, out var aggregateId)
-                ? aggregateId
-                : Guid.NewGuid();
+            AggregateId = user.Id == Guid.Empty
+                ? Guid.NewGuid()
+                : user.Id;
         }
     }
 }

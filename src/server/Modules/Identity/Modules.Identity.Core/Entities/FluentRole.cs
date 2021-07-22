@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using FluentPOS.Modules.Identity.Core.Entities.ExtendedAttributes;
 using FluentPOS.Shared.Core.Domain;
+using System;
 
 namespace FluentPOS.Modules.Identity.Core.Entities
 {
-    public class FluentRole : IdentityRole, IEntity<string>, IBaseEntity
+    public class FluentRole : IdentityRole<Guid>, IEntity<Guid>, IBaseEntity
     {
         public string Description { get; set; }
         public virtual ICollection<FluentRoleClaim> RoleClaims { get; set; }

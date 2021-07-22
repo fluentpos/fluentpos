@@ -5,14 +5,14 @@ namespace FluentPOS.Modules.Identity.Core.Features.Users.Events
 {
     public class UserDeletedEvent : Event
     {
-        public string Id { get; }
+        public Guid Id { get; }
 
-        public UserDeletedEvent(string id)
+        public UserDeletedEvent(Guid id)
         {
             Id = id;
-            AggregateId = Guid.TryParse(id, out var aggregateId)
-                ? aggregateId
-                : Guid.NewGuid();
+            AggregateId = id == Guid.Empty
+                ? Guid.NewGuid()
+                : id;
         }
     }
 }

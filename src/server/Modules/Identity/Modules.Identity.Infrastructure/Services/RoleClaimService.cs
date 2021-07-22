@@ -55,7 +55,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             return count;
         }
 
-        public async Task<Result<RoleClaimResponse>> GetByIdAsync(int id)
+        public async Task<Result<RoleClaimResponse>> GetByIdAsync(Guid id)
         {
             var roleClaim = await _db.RoleClaims.AsNoTracking()
                 .SingleOrDefaultAsync(x => x.Id == id);
@@ -63,7 +63,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             return await Result<RoleClaimResponse>.SuccessAsync(roleClaimResponse);
         }
 
-        public async Task<Result<List<RoleClaimResponse>>> GetAllByRoleIdAsync(string roleId)
+        public async Task<Result<List<RoleClaimResponse>>> GetAllByRoleIdAsync(Guid roleId)
         {
             var roleClaims = await _db.RoleClaims
                 .AsNoTracking()
@@ -76,12 +76,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
 
         public async Task<Result<string>> SaveAsync(RoleClaimRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request.RoleId))
-            {
-                return await Result<string>.FailAsync(_localizer["Role is required."]);
-            }
-
-            if (request.Id == 0)
+            if (request.Id == Guid.Empty)
             {
                 var existingRoleClaim =
                     await _db.RoleClaims
@@ -122,7 +117,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             }
         }
 
-        public async Task<Result<string>> DeleteAsync(int id)
+        public async Task<Result<string>> DeleteAsync(Guid id)
         {
             var existingRoleClaim = await _db.RoleClaims
                 .Include(x => x.Role)
@@ -145,12 +140,12 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             }
         }
 
-        public async Task<Result<PermissionResponse>> GetAllPermissionsAsync(string roleId)
+        public async Task<Result<PermissionResponse>> GetAllPermissionsAsync(Guid roleId)
         {
             var response = new PermissionResponse();
             var allPermissions = new List<RoleClaimResponse>();
             allPermissions.GetAllPermissions();
-            var role = await _roleManager.FindByIdAsync(roleId);
+            var role = await _roleManager.FindByIdAsync(roleId.ToString());
             if (role != null)
             {
                 response.RoleId = role.Id;
@@ -165,7 +160,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
                     var authorizedClaims = allClaimValues.Intersect(roleClaimValues).ToList();
                     foreach (var permission in allPermissions)
                     {
-                        permission.Id = allRoleClaims.Data?.SingleOrDefault(x => x.RoleId == roleId && x.Type == permission.Type && x.Value == permission.Value)?.Id ?? 0;
+                        permission.Id = allRoleClaims.Data?.SingleOrDefault(x => x.RoleId == roleId && x.Type == permission.Type && x.Value == permission.Value)?.Id ?? Guid.Empty;
                         permission.RoleId = roleId;
                         if (authorizedClaims.Any(a => a == permission.Value))
                         {
@@ -205,7 +200,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
                 var role = await _roleManager.FindByIdAsync(request.RoleId);
                 if (role.Name == RoleConstants.SuperAdmin)
                 {
-                    var currentUser = await _userManager.Users.SingleAsync(x => x.Id == _currentUserService.GetUserId().ToString());
+                    var currentUser = await _userManager.Users.SingleAsync(x => x.Id == _currentUserService.GetUserId());
                     if (!await _userManager.IsInRoleAsync(currentUser, RoleConstants.SuperAdmin))
                     {
                         return await Result<string>.FailAsync(_localizer["Not allowed to modify Permissions for this Role."]);

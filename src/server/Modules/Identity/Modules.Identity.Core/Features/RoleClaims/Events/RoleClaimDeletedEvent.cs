@@ -5,9 +5,9 @@ namespace FluentPOS.Modules.Identity.Core.Features.RoleClaims.Events
 {
     public class RoleClaimDeletedEvent : Event
     {
-        public int Id { get; }
+        public Guid Id { get; }
 
-        public RoleClaimDeletedEvent(int id)
+        public RoleClaimDeletedEvent(Guid id)
         {
             Id = id;
             AggregateId = Guid.NewGuid();

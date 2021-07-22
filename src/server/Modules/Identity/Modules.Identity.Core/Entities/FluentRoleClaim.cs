@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FluentPOS.Shared.Core.Contracts;
 using FluentPOS.Shared.Core.Domain;
 using Microsoft.AspNetCore.Identity;
 
 namespace FluentPOS.Modules.Identity.Core.Entities
 {
-    public class FluentRoleClaim : IdentityRoleClaim<string>, IBaseEntity
+    public class FluentRoleClaim : IdentityRoleClaim<Guid>, IBaseEntity
     {
+        public new Guid Id { get; set; }
         public string Description { get; set; }
         public string Group { get; set; }
         public virtual FluentRole Role { get; set; }

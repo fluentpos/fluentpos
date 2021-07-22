@@ -108,7 +108,7 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Services
             }
             var claims = new List<Claim>
             {
-                new(ClaimTypes.NameIdentifier, user.Id),
+                new(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new(ClaimTypes.Email, user.Email),
                 new("fullName",$"{user.FirstName} {user.LastName}"),
                 new(ClaimTypes.Name, user.FirstName),

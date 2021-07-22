@@ -6,8 +6,8 @@ namespace FluentPOS.Modules.Identity.Core.Features.RoleClaims.Events
 {
     public class RoleClaimAddedEvent : Event
     {
-        public int Id { get; }
-        public string RoleId { get; }
+        public Guid Id { get; }
+        public Guid RoleId { get; }
         public string ClaimType { get; }
         public string ClaimValue { get; }
         public string Group { get; }

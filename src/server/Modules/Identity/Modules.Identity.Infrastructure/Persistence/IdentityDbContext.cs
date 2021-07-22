@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentPOS.Modules.Identity.Core.Abstractions;
 using FluentPOS.Modules.Identity.Core.Entities;
@@ -17,11 +18,11 @@ using Microsoft.Extensions.Options;
 
 namespace FluentPOS.Modules.Identity.Infrastructure.Persistence
 {
-    public sealed class IdentityDbContext : IdentityDbContext<FluentUser, FluentRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, FluentRoleClaim, IdentityUserToken<string>>,
+    public sealed class IdentityDbContext : IdentityDbContext<FluentUser, FluentRole, Guid, IdentityUserClaim<Guid>, IdentityUserRole<Guid>, IdentityUserLogin<Guid>, FluentRoleClaim, IdentityUserToken<Guid>>,
         IIdentityDbContext,
         IModuleDbContext,
-        IExtendedAttributeDbContext<string, FluentUser, UserExtendedAttribute>,
-        IExtendedAttributeDbContext<string, FluentRole, RoleExtendedAttribute>
+        IExtendedAttributeDbContext<Guid, FluentUser, UserExtendedAttribute>,
+        IExtendedAttributeDbContext<Guid, FluentRole, RoleExtendedAttribute>
     {
         private readonly IMediator _mediator;
         private readonly IEventLogger _eventLogger;
@@ -65,12 +66,12 @@ namespace FluentPOS.Modules.Identity.Infrastructure.Persistence
             return SaveChanges();
         }
 
-        DbSet<FluentUser> IExtendedAttributeDbContext<string, FluentUser, UserExtendedAttribute>.GetEntities() => Users;
+        DbSet<FluentUser> IExtendedAttributeDbContext<Guid, FluentUser, UserExtendedAttribute>.GetEntities() => Users;
 
-        DbSet<UserExtendedAttribute> IExtendedAttributeDbContext<string, FluentUser, UserExtendedAttribute>.ExtendedAttributes { get; set; }
+        DbSet<UserExtendedAttribute> IExtendedAttributeDbContext<Guid, FluentUser, UserExtendedAttribute>.ExtendedAttributes { get; set; }
 
-        DbSet<FluentRole> IExtendedAttributeDbContext<string, FluentRole, RoleExtendedAttribute>.GetEntities() => Roles;
+        DbSet<FluentRole> IExtendedAttributeDbContext<Guid, FluentRole, RoleExtendedAttribute>.GetEntities() => Roles;
 
-        DbSet<RoleExtendedAttribute> IExtendedAttributeDbContext<string, FluentRole, RoleExtendedAttribute>.ExtendedAttributes { get; set; }
+        DbSet<RoleExtendedAttribute> IExtendedAttributeDbContext<Guid, FluentRole, RoleExtendedAttribute>.ExtendedAttributes { get; set; }
     }
 }

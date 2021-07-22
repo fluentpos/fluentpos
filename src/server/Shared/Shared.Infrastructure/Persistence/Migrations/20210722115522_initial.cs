@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FluentPOS.Shared.Infrastructure.Persistence.Migrations
 {
@@ -15,12 +15,12 @@ namespace FluentPOS.Shared.Infrastructure.Persistence.Migrations
                 schema: "Application",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Data = table.Column<string>(type: "text", nullable: true),
-                    User = table.Column<string>(type: "text", nullable: true),
-                    MessageType = table.Column<string>(type: "text", nullable: true),
-                    AggregateId = table.Column<Guid>(type: "uuid", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Data = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    User = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MessageType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AggregateId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

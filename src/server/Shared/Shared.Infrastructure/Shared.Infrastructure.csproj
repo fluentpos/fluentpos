@@ -33,4 +33,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Shared.Core\Shared.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Persistence\Migrations\" />
+  </ItemGroup>
 </Project>
